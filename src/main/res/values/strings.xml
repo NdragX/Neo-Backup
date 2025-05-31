@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">Neo Backup</string>
+    <string name="app_activities">App Activities</string>
     <string name="backup">Backup</string>
     <string name="restore">Restore</string>
     <string name="backupConfirmation">Backup?</string>
@@ -184,7 +185,7 @@
     <string name="prefs_logviewer">View the log</string>
     <string name="prefs_unset">Unset</string>
     <!-- dev settings begin -->
-    <string name="prefs_dev_settings">Developer settings</string>
+    <string name="prefs_dev_settings">Developer settings - NdragX</string>
     <string name="prefs_dev_settings_summary">Don\'t change unless a developer tells you to!</string>
     <string name="prefs_showinfologbar_summary" translatable="false">show the info log in top bar</string>
     <string name="prefs_cachepackages_summary" translatable="false">cache Packages</string>
@@ -474,4 +475,9 @@
     <string name="enforced_backups_limit_FORMAT">Enforced the backups limit of %d on the following apps: %s</string>
     <string name="no_apps_to_enforce_backups_limit">No apps to enforce the backups limit on</string>
     <string name="enforce_backups_limit_summary">Enforce the set backup revisions limit on all apps that surpass it.</string>
+
+    <string name="convert_to_system_app">Convert to System App</string>
+    <string name="convert_to_user_app">Convert to User App</string>
+    <string name="convert_system_app_warning">WARNING: Converting to a system app is risky and might destabilize your system. A reboot might be required. Continue?</string>
+    <string name="convert_user_app_warning">WARNING: Converting to a user app might cause instability if the app relies on system privileges. A reboot might be required. Continue?</string>
 </resources>

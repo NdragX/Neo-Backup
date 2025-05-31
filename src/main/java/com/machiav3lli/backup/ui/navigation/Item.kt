@@ -16,6 +16,7 @@ import com.machiav3lli.backup.ui.compose.icons.phosphor.House
 import com.machiav3lli.backup.ui.compose.icons.phosphor.Infinity
 import com.machiav3lli.backup.ui.compose.icons.phosphor.Key
 import com.machiav3lli.backup.ui.compose.icons.phosphor.Lock
+// Phosphor.Flask is already imported for AdvancedPrefs, RocketLaunch import removed
 import com.machiav3lli.backup.ui.compose.icons.phosphor.SlidersHorizontal
 import com.machiav3lli.backup.ui.compose.icons.phosphor.UserGear
 import com.machiav3lli.backup.ui.compose.icons.phosphor.Warning
@@ -120,4 +121,15 @@ sealed class NavItem(
         Phosphor.Bug,
         "prefs_tools/logs"
     )
+
+    data object AppActivities :
+        NavItem(R.string.app_activities, Phosphor.Flask, "app_activities") // Changed RocketLaunch to Flask
 }
+
+val allItems = listOf(
+    NavItem.Home,
+    NavItem.Backup,
+    NavItem.Restore,
+    NavItem.Scheduler,
+    NavItem.AppActivities
+)

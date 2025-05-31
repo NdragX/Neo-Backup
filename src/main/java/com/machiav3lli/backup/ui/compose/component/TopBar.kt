@@ -58,15 +58,18 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.machiav3lli.backup.NeoApp
 import com.machiav3lli.backup.R
 import com.machiav3lli.backup.ui.compose.blockBorderTop
 import com.machiav3lli.backup.ui.compose.icons.Phosphor
+import com.machiav3lli.backup.ui.compose.icons.phosphor.Flask
 import com.machiav3lli.backup.ui.compose.icons.phosphor.MagnifyingGlass
 import com.machiav3lli.backup.ui.compose.icons.phosphor.X
 import com.machiav3lli.backup.ui.compose.ifThenElse
 import com.machiav3lli.backup.ui.compose.vertical
 import com.machiav3lli.backup.ui.dialogs.BaseDialog
+import com.machiav3lli.backup.ui.navigation.NavItem
 import com.machiav3lli.backup.ui.pages.pref_showInfoLogBar
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
@@ -236,6 +239,7 @@ fun MainTopBar(
     query: String,
     onQueryChanged: (String) -> Unit,
     onClose: () -> Unit,
+    navController: NavHostController,
     modifier: Modifier = Modifier,
     actions: @Composable() (RowScope.() -> Unit) = {},
 ) {
@@ -309,7 +313,14 @@ fun MainTopBar(
                     enter = enterPositive,
                     exit = exitPositive,
                 ) {
-                    Row { actions() }
+                    Row {
+                        RoundButton(
+                            icon = Phosphor.Flask, // Changed RocketLaunch to Flask
+                            description = stringResource(id = R.string.app_activities),
+                            onClick = { navController.navigate(NavItem.AppActivities.destination) }
+                        )
+                        actions()
+                    }
                 }
             }
         )

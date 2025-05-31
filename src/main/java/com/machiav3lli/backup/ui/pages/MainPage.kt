@@ -108,7 +108,8 @@ fun MainPage(
                         },
                         onClose = {
                             viewModel.setSearchQuery("")
-                        }
+                        },
+                        navController = navController
                     ) {
                         when (currentPage.destination) {
                             NavItem.Scheduler.destination -> {

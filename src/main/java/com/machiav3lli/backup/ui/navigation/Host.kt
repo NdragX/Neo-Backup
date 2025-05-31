@@ -18,6 +18,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.machiav3lli.backup.ui.pages.AppActivitiesPage
 import com.machiav3lli.backup.ui.pages.EncryptionPage
 import com.machiav3lli.backup.ui.pages.LockPage
 import com.machiav3lli.backup.ui.pages.LogsPage
@@ -80,6 +81,9 @@ fun MainNavHost(
         }
         slideInComposable(NavItem.Terminal.destination) {
             TerminalPage(title = stringResource(id = NavItem.Terminal.title))
+        }
+        slideInComposable(NavItem.AppActivities.destination) {
+            AppActivitiesPage()
         }
     }
 }
